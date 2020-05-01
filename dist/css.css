@@ -1,0 +1,19 @@
+p {
+  color: red;
+}
+
+p a {
+  color: 255;
+}
+
+p b {
+  color: #000;
+}
+
+div {
+  position: relative;
+}
+
+span {
+  color: #000;
+}
