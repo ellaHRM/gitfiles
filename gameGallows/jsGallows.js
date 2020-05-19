@@ -7,28 +7,42 @@ var Gallows = {
     alphabetSpan: '',
     spanLetter: '',
     answerArray: [],
+    index: 0,
+    elIndex: document.getElementById('index'),
 
     ansverArr: function (chars, sumbol) {//запихиваем в массив элемент по индексу
         for (i = 0; i < chars.length; i++) {
             if (chars[i] == sumbol) {
-                this.answerArray[i] = sumbol;
-            } 
+                if (this.answerArray[i] != sumbol) {
+                    this.answerArray[i] = sumbol;
+                    this.index++;
+                }
+
+            }
         }
         return this.answerArray;
     },
 
-    newAnsverArr: function(chars){//создаем массив заполненный подчеркиванием
+    newAnsverArr: function (chars) {//создаем массив заполненный подчеркиванием
         for (i = 0; i < chars.length; i++) {
-                this.answerArray[i] = "_";
+            this.answerArray[i] = "_";
         }
         return this.answerArray;
+    },
+
+    indexBalance: function (chars) {
+        this.elIndex.innerHTML = 'осталось отгадать букв: ' + (chars.length - this.index);
+        if ((chars.length - this.index) === 0) {
+            this.elIndex.innerHTML ='Ты угадал слово! Молодец!';
+        }
     },
 
     randWord: function (sumbol) {//получим слово
 
         let chars = this.randon.split('');
         this.elWord.innerHTML = this.ansverArr(chars, sumbol).join(' ');
-        
+        this.indexBalance(chars);
+
     },
 
     alphabetBox: function () {//сформируем плашку с буквами
@@ -46,43 +60,16 @@ var Gallows = {
     },
 
     init: function () {
+
         this.randon = (this.massWord[Math.floor(Math.random() * this.massWord.length)]);
         let chars = this.randon.split('');
         this.elWord.innerHTML = this.newAnsverArr(chars).join(' ');
-
+        this.indexBalance(chars);
         this.elLetterBox.innerHTML = this.alphabetBox();
         this.spanEvent();
     }
-
-
-
-
-
-
-
 
 }
 
 
 
-
-
-
-
-
- // 2. Пока слово не угадано
-    //показать игроку интерфейс игры
-    //показать игроку состояние игры
-        //подставить в слово угаданные буквы
-        //показать какие буквы остались
-
-    //запросить вариант ответа
-
-    //предоставить интерфейс с буквами
-
-    //если игрок выходт из игры {}
-
-    //если буква есть, обновить игру подставив новую букву
-
-
-// 3. Когда слово угадано, показать поздравление игроку
