@@ -1,0 +1,1 @@
+"use strict";var salaries={John:100,Ann:160,Pete:130},AllZP={sum:0,sumfn:function(s){for(var n in s)this.sum+=s[n];return this.sum}},sum=AllZP.sumfn(salaries);console.log(sum);

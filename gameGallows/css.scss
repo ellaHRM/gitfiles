@@ -1,0 +1,23 @@
+    #letterInterface {
+        padding: 10px;
+        span {
+            border: 1px solid rgb(25, 164, 182);
+            color:  rgb(25, 164, 182);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 7px;
+            margin: 7px;
+            border-radius: 3px;
+        }
+    }
+        .gallows {
+            text-align: center;
+            h1{
+                text-transform: uppercase;
+                color: #404041;
+            }
+        }
+
+        #wordRandom{
+            font-size: 30px;
+        }
