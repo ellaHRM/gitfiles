@@ -1,0 +1,45 @@
+.Treasure {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Treasure h1 {
+  color: #52715e;
+  text-transform: uppercase;
+  background: #edeeed;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.Treasure #Map {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+}
+
+.Treasure #Map img {
+  position: relative;
+  z-index: 4;
+  display: block;
+}
+
+.Treasure #Map .point {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #f00909;
+  position: absolute;
+  z-index: 25;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.Treasure #Prompt {
+  border-top: #52715e 5px solid;
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 25px;
+}
